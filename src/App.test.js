@@ -20,3 +20,11 @@ test('last name text element found', () => {
     const lastName = screen.getByText("Last Name*")
     expect(lastName).toBeInTheDocument()
 })
+
+test('test max length on first name input', () => {
+    render(<ContactForm />)
+
+    const maxLength = screen.getByPlaceholderText(/edd/i)
+
+    expect(maxLength).toBe(3)
+})
